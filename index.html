@@ -47,23 +47,71 @@
                     <a href="#landing-page-2" class="button" id="landing-button">EXPLORE</a>
                 </div>
             </div>
-            
         </section>
 
-        <!-- Section 2: Landing Page 2 -->
-        <section class="container-fluid" id="landing-page-2">
-            <div class="row center">
-                <div class="col-sm-12 col-lg-8 api-container center-col">
-                    <div>
-                        <h1 class="title"></h1>
-                        <h5 class="date"></h5>
-                    </div>
-                    <img class="col-8 apod">
-                    <p class="col-10 description"></p>
-                    <div class="like-btn">
-                        <img class="heart" src="images/heart.png">
-                        <h5 class="text">Like</h5>
-                    </div>
+
+         <!-- Section 2: Landing Page 2 -->
+         <section class="container-fluid" id="landing-page-2">
+            <div class="row carousel center-col">
+                <!-- Left Arrow -->
+                <button class="carousel__button carousel__button--left is-hidden">
+                    <img src="images/left-button.png">
+                </button>
+                <!-- Slides -->
+                <div class="carousel__track-container">
+                    <ul class="carousel__track">
+                        <!-- Image 1 -->
+                        <li class="carousel__slide current-slide">
+                            <div>
+                                <h1>Astronomy Picture of the Day</h1>
+                                <h4 class="title"></h4>
+                                <h5 class="date"></h5>
+                            </div>
+                            <img class="apod carousel__image" alt="">
+                            <p class="col-lg-10 col-xxl-8 description"></p>
+                            <div class="like-btn">
+                                <img class="heart" src="images/heart.png">
+                                <h5 class="text">Like</h5>
+                            </div>
+                        </li>
+                        <!-- Image 2 -->
+                        <li class="carousel__slide">
+                            <div>
+                                <h1>Mars Rover Picture</h1>
+                                <h4 class="mars-1-title"></h4>
+                                <h5 class="mars-1-date"></h5>
+                            </div>
+                            <div class="mars-1">
+                            </div>
+                            <div class="like-btn">
+                                <img class="heart" src="images/heart.png">
+                                <h5 class="text">Like</h5>
+                            </div>
+                        </li>
+                        <!-- Image 3 -->
+                        <li class="carousel__slide">
+                            <div>
+                                <h1>Mars Rover Picture</h1>
+                                <h4 class="mars-2-title"></h4>
+                                <h5 class="mars-2-date"></h5>
+                            </div>
+                            <div class="mars-2"></div>
+                            <div class="like-btn">
+                                <img class="heart" src="images/heart.png">
+                                <h5 class="text">Like</h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Right Arrow-->
+                <button class="carousel__button carousel__button--right">
+                    <img src="images/right-button.png">
+                </button>
+                <!-- Carousel Navigation -->
+                <div class="carousel__nav">
+                    <button class="carousel__indicator current-slide"></button>
+                    <button class="carousel__indicator"></button>
+                    <button class="carousel__indicator"></button>
                 </div>
             </div>
             
@@ -75,7 +123,8 @@
         crossorigin="anonymous"></script>
         <!-- Link to JS file -->
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/carousel.js"></script>
         <!-- Loader -->
         <div class="loader-wrapper">
             <span class="loader"><span class="loader-inner"></span></span>

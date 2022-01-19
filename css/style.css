@@ -29,8 +29,19 @@ html {
 
 /*+++++++++++++++++++ MEDIA QUERY FOR SMALL +++++++++++++++++++ */
 @media only screen and (min-width: 1px) and (max-width: 991px) {
-    .api-container > * {
+    .carousel__track-container > * {
         margin: 5px;
+    }
+    .carousel__button {
+        height: 40px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .carousel__button img {
+        max-height: 20px;
+        max-width: 20px;
+        object-fit: contain;
+        transform: translateY(-48.5%);
     }
     .heart {
         max-height: 50px;
@@ -75,7 +86,7 @@ html {
 
 /*+++++++++++++++++++ MEDIA QUERY FOR LARGE +++++++++++++++++++ */
 @media only screen and (min-width: 992px){
-    .api-container > * {
+    .carousel__track-container > * {
         margin: 20px;
     }
     .heart {
@@ -208,18 +219,6 @@ html {
   }
 
 /*+++++++++++++++++++ LANDING PAGE +++++++++++++++++++ */
-.api-container {
-    background-color: #1d1d1d;
-    padding: 60px;
-    border-radius: 10%;
-    position: absolute;
-    height: 80vh;
-    z-index: 5;
-    animation: float 3s ease-in-out infinite;
-}
-.api-container p {
-    font-size: 80%;
-}
 .apod {
     margin-bottom: 20px;
     max-height:500px;
@@ -227,6 +226,16 @@ html {
 }
 .image-container {
     height: 100%;
+}
+.mars-1 img {
+    max-height: 500px;
+    object-fit: cover;
+    margin-top: 25px;
+}
+.mars-2 img {
+    max-height: 500px;
+    object-fit: cover;
+    margin-top: 25px;
 }
 #landing-page-1 {
     height: 100vh;
@@ -241,6 +250,9 @@ html {
     background-size: cover;
     color: white;
     text-align: center;
+}
+#landing-page-2 p {
+    margin: 0 auto;
 }
 
 /*+++++++++++++++++++ LIKE BUTTON +++++++++++++++++++ */
@@ -263,6 +275,8 @@ html {
     justify-content: center;
     align-items: center;
     background-color: white;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 .like-btn:hover {
     cursor: pointer;
@@ -272,6 +286,114 @@ html {
     background: #fbd0d8;
 }
 
+/*+++++++++++++++++++ CAROUSEL +++++++++++++++++++ */
+.carousel {
+    position: relative;
+    height: 600px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 150px;
+    top: 25%;
+}
+
+.carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__track-container {
+    /* height: 100%; */
+    position: relative;
+    overflow: hidden;
+    background-color: #1d1d1d;
+    padding: 60px;
+    border-radius: 10%;
+    height: 80vh;
+    z-index: 5;
+    animation: float 3s ease-in-out infinite;
+}
+
+.carousel__track-container p {
+    font-size: 80%;
+}
+
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+
+.carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 60px;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+.carousel__button:hover {
+    background-color: #E3B782;
+    border: 2px solid #E3B782;
+    color: white;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.carousel__button--left {
+    left: -70px;
+    z-index: 20;
+}
+
+.carousel__button--right {
+    right: -70px;
+    z-index: 20;
+}
+
+.carousel__button img {
+    width: 20px;
+}
+
+.carousel__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 2%;
+    height: 10%;
+    transform: scale(10%);
+    background: rgba(0,0,0,0);
+    margin: 0 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.carousel__indicator.current-slide {
+    background: rgba(0,0,0,0);
+}
+
+.is-hidden {
+    display: none;
+}
 
 
 
