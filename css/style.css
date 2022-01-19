@@ -1,0 +1,278 @@
+/*+++++++++++++++++++
+/* Author: Joseph Latina */
+
+/* BOX MODEL FIX */
+html {
+    box-sizing: border-box;
+   }
+   *, *:before, *:after {
+    box-sizing: inherit;
+   }
+
+/* CLEAR FIX */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*+++++++++++++++++++*/
+
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}
+
+/*+++++++++++++++++++ MEDIA QUERY FOR SMALL +++++++++++++++++++ */
+@media only screen and (min-width: 1px) and (max-width: 991px) {
+    .api-container > * {
+        margin: 5px;
+    }
+    .heart {
+        max-height: 50px;
+        max-width: 50px;
+        margin-left: -5px;
+        object-fit: cover;
+        object-position: left;
+    }
+    .landing-message {
+        position: absolute;
+        top: 35%;
+        z-index: 20;
+    }
+    .text {
+        margin: 5px 0 5px 0;
+    }
+    #landing-page-1 img {
+        position: absolute;
+        object-fit: cover;
+        object-position: left;
+        height: 100%;
+        transform: translate(-50%, -70%);
+        z-index: 1;
+    }
+    #landing-page-2 p {
+        display: none;
+    }
+    #landing-page-2 h1{
+        font-size: 90%;
+    }
+    #landing-page-2 h5 {
+        font-size: 90%;
+    }
+    #landing-page-2 img {
+        height: 80vh;
+        width: 100%;
+    }
+    #web-view {
+        display: none;
+    }
+}
+
+/*+++++++++++++++++++ MEDIA QUERY FOR LARGE +++++++++++++++++++ */
+@media only screen and (min-width: 992px){
+    .api-container > * {
+        margin: 20px;
+    }
+    .heart {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+        object-position: left;
+    }
+    .mobile-small {
+        display: none;
+    }
+    .text {
+        font-size: 90%;
+        margin: 5px 20px 5px 0;
+    }
+    #landing-page-1 img {
+        position: absolute;
+        object-fit: cover;
+        object-position: left;
+        height: 100%;
+        transform: translate(-50%, -20%);
+        z-index: 1;
+    }
+    #mobile-view {
+        display: none;
+    }
+}
+
+/*+++++++++++++++++++ GLOBAL STYLES +++++++++++++++++++ */
+.animate-delay {
+    animation-delay: 0.5s;
+}
+.button {
+    width: 180px;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+    display: table;
+    margin: 0 auto;
+}
+.button:hover {
+    background-color: #E3B782;
+    border: 2px solid #E3B782;
+    color: white;
+    transition-duration: 0.8s;
+    transition-timing-function: ease;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.center-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 4px solid #252821;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #252821;
+    animation: loader-inner 2s infinite ease-in;
+}
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+@keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+}
+  @keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+@keyframes animate-heart {
+    0%{
+      object-position: left;
+    }
+    100%{
+      object-position: right;
+    }
+  }
+
+/*+++++++++++++++++++ LANDING PAGE +++++++++++++++++++ */
+.api-container {
+    background-color: #1d1d1d;
+    padding: 60px;
+    border-radius: 10%;
+    position: absolute;
+    height: 80vh;
+    z-index: 5;
+    animation: float 3s ease-in-out infinite;
+}
+.api-container p {
+    font-size: 80%;
+}
+.apod {
+    margin-bottom: 20px;
+    max-height:500px;
+    object-fit: cover;
+}
+.image-container {
+    height: 100%;
+}
+#landing-page-1 {
+    height: 100vh;
+    margin: 0;
+    background-color: #1d1d1d;
+    color: white;
+    text-align: center;
+}
+#landing-page-2 {
+    height: 100vh;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../images/background-1.jpg");
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+/*+++++++++++++++++++ LIKE BUTTON +++++++++++++++++++ */
+.heart:hover {
+    object-position: right;
+}
+.heart.heart-active {
+    animation: animate-heart .8s steps(28) 1;
+    object-position: right;
+}
+.like-btn {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.like-btn:hover {
+    cursor: pointer;
+}
+.like-btn.heart-active {
+    border-color: #f9b9c4;
+    background: #fbd0d8;
+}
+
+
+
+
+
